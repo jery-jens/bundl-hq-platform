@@ -23,14 +23,36 @@
     const toggleScheduleLinks = document.querySelectorAll(".js-haspopup")
     const popups = document.querySelectorAll(".js-popup")
     const closeToggles = document.querySelectorAll(".js-closepopup")
+    const formStorage = JSON.parse(localStorage.getItem('forms')) ?? []
 
-    /** Place cookie when toggled popup is a form  */
-    
+    /** Place in storage when toggled popup is a form  */
+    const placeStorage = (title) => {
+      if (formStorage.length) {
+        // Check if form isn't filled in
+        if (!formStorage.contains(title)) {
+          formStorage.push(title)
+          formStorage.setItem('forms', JSON.stringify(currentStorage))
+        }
+      }
+    }
+
+    /** Check if all items are filled in or naah */
+    if (formStorage.length) {
+      toggleLinks.forEach((link) => {
+        if (formStorage.contains(link.children[0].innerHTML)) {
+          // TODO: Show green icon
+        }
+      })
+    }
 
     /** Toggle popup when clicking link */
     const togglePopup = (title) => {
       popups.forEach((popup) => {
         if (popup.innerHTML === title) {
+          // Place cookie
+          placeStorage(title)
+
+          // Show popup
           const wrapper = popup.parentElement
           wrapper.style.display = "flex"
         }
