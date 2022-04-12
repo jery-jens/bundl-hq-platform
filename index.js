@@ -17,13 +17,17 @@
       })
     }
     
-    /** Toggle popup when clicking link */
+    /** Popups */
     const toggleLinks = document.querySelectorAll(".js-togglepopup")
     const toggleDeskLinks = document.querySelectorAll(".js-deskspace")
     const toggleScheduleLinks = document.querySelectorAll(".js-haspopup")
     const popups = document.querySelectorAll(".js-popup")
     const closeToggles = document.querySelectorAll(".js-closepopup")
 
+    /** Place cookie when toggled popup is a form  */
+    
+
+    /** Toggle popup when clicking link */
     const togglePopup = (title) => {
       popups.forEach((popup) => {
         if (popup.innerHTML === title) {
