@@ -90,4 +90,16 @@
       window.location.reload();
     });
   });
+
+  /** Toggle event popup */
+  scheduleItems.forEach((link) => {
+    link.addEventListener('click', () => {
+      popups.forEach((popup) => {
+        if (popup.innerHTML === link.children[1].innerHTML) {
+          const wrapper = popup.parentElement;
+          wrapper.style.display = 'flex';
+        }
+      });
+    });
+  });
 }());
