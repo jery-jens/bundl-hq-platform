@@ -1,1 +1,2 @@
-location.replace('/')
+/* eslint-disable no-restricted-globals */
+location.replace('/');
