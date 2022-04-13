@@ -43,7 +43,7 @@
   };
 
   /** Check if empy placeholder is needed */
-  const days = document.querySelectorAll('.js-days');
+  const days = document.querySelectorAll('.js-day');
 
   days.forEach((day) => {
     const items = day.querySelectorAll('.js-scheduleevent');
