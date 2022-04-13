@@ -51,7 +51,7 @@
     let pass = true;
 
     items.forEach((item) => {
-      if (item.style.display !== 'flex') {
+      if (item.style.display === 'flex') {
         pass = false;
       }
     });
