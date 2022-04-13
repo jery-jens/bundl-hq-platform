@@ -42,6 +42,25 @@
     }
   };
 
+  /** Check if empy placeholder is needed */
+  const days = document.querySelectorAll('.js-days');
+
+  days.forEach((day) => {
+    const items = day.querySelectorAll('.js-scheduleevent');
+    const empty = day.querySelector('.js-empty');
+    let pass = true;
+
+    items.forEach((item) => {
+      if (item.style.display !== 'flex') {
+        pass = false;
+      }
+    });
+
+    if (!pass) {
+      empty.style.display = 'flex';
+    }
+  });
+
   /** Check if all items are filled in or naah */
   if (formStorage.length) {
     toggleLinks.forEach((link, index) => {
