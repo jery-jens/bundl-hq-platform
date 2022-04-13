@@ -47,8 +47,10 @@
     toggleLinks.forEach((link, index) => {
       if (formStorage.includes(link.children[0].innerHTML)) {
         // Add green color and full opacity to filled in icon
+        if (formIcons[index]) {
         formIcons[index].children[0].style.fill = '#00BB77';
         formIcons[index].children[0].setAttribute('fill-opacity', '1');
+        }
       }
     });
   }
