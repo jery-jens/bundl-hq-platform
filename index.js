@@ -33,7 +33,7 @@
   const placeStorage = (title) => {
     if (formStorage.length) {
       // Check if form isn't filled in
-      if (!formStorage.contains(title)) {
+      if (!formStorage.includes(title)) {
         formStorage.push(title);
         localStorage.setItem('forms', JSON.stringify(formStorage));
       }
@@ -47,7 +47,7 @@
   console.log(formIcons);
   if (formStorage.length) {
     toggleLinks.forEach((link, index) => {
-      if (formStorage.contains(link.children[0].innerHTML)) {
+      if (formStorage.includes(link.children[0].innerHTML)) {
         // Add green color to filled in icon
         formIcons[index].children[0].style.fill = '#00BB77';
       }
