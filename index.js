@@ -43,13 +43,12 @@
   };
 
   /** Check if all items are filled in or naah */
-  console.log(formStorage);
-  console.log(formIcons);
   if (formStorage.length) {
     toggleLinks.forEach((link, index) => {
       if (formStorage.includes(link.children[0].innerHTML)) {
-        // Add green color to filled in icon
+        // Add green color and full opacity to filled in icon
         formIcons[index].children[0].style.fill = '#00BB77';
+        formIcons[index].children[0].style['fill-opacity '] = '1';
       }
     });
   }
@@ -88,9 +87,7 @@
 
   closeToggles.forEach((closeToggle) => {
     closeToggle.addEventListener('click', () => {
-      popups.forEach((popup) => {
-        popup.parentElement.style.display = 'none';
-      });
+      window.location.reload();
     });
   });
 }());
