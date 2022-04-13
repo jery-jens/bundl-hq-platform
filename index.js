@@ -35,7 +35,7 @@
       // Check if form isn't filled in
       if (!formStorage.contains(title)) {
         formStorage.push(title);
-        formStorage.setItem('forms', JSON.stringify(formStorage));
+        localStorage.setItem('forms', JSON.stringify(formStorage));
       }
     } else {
       localStorage.setItem('forms', JSON.stringify([title]));
