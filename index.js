@@ -48,7 +48,7 @@
       if (formStorage.includes(link.children[0].innerHTML)) {
         // Add green color and full opacity to filled in icon
         formIcons[index].children[0].style.fill = '#00BB77';
-        formIcons[index].children[0].style['fill-opacity '] = '1';
+        formIcons[index].children[0].setAttribute('fill-opacity', '1');
       }
     });
   }
