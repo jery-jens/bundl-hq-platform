@@ -27,6 +27,7 @@
   const popups = document.querySelectorAll('.js-popup');
   const closeToggles = document.querySelectorAll('.js-closepopup');
   const formStorage = JSON.parse(localStorage.getItem('forms')) ?? [];
+  const formIcons = document.querySelectorAll('.js-icon');
 
   /** Place in storage when toggled popup is a form  */
   const placeStorage = (title) => {
@@ -40,10 +41,13 @@
   };
 
   /** Check if all items are filled in or naah */
+  console.log(formStorage);
+  console.log(formIcons);
   if (formStorage.length) {
-    toggleLinks.forEach((link) => {
+    toggleLinks.forEach((link, index) => {
       if (formStorage.contains(link.children[0].innerHTML)) {
-        // TODO: Show green icon
+        // Add green color to filled in icon
+        formIcons[index].children[0].style.fill = '#00BB77';
       }
     });
   }
