@@ -37,6 +37,8 @@
         formStorage.push(title);
         formStorage.setItem('forms', JSON.stringify(formStorage));
       }
+    } else {
+      formStorage.setItem('forms', JSON.stringify([title]));
     }
   };
 
