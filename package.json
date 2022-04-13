@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "minify:relocate": "minify relocate.js > relocate.min.js",
+    "minify:index": "minify index.js > index.min.js"
+  },
   "devDependencies": {
     "eslint": "^8.13.0",
     "eslint-config-airbnb": "^19.0.4",
