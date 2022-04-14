@@ -47,21 +47,16 @@
 
   days.forEach((day) => {
     const items = day.querySelectorAll('.js-scheduleevent');
-    console.log(items);
     const empty = day.querySelector('.js-empty');
     let pass = true;
 
     items.forEach((item) => {
-      console.log(item);
-      console.log(item.style.display);
       if (item.style.display === 'flex') {
         pass = false;
       }
     });
 
-    console.log(pass);
-
-    if (!pass) {
+    if (pass) {
       empty.style.display = 'flex';
     }
   });
