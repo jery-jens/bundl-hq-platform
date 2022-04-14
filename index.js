@@ -48,16 +48,20 @@
   days.forEach((day) => {
     const items = day.querySelectorAll('.js-scheduleevent');
     const empty = day.querySelector('.js-empty');
-    let pass = true;
+    const activeEmpty = day.querySelector('.js-activeempty');
 
-    items.forEach((item) => {
-      if (item.style.display === 'flex') {
-        pass = false;
+    if (!activeEmpty) {
+      let pass = true;
+
+      items.forEach((item) => {
+        if (item.style.display === 'flex') {
+          pass = false;
+        }
+      });
+
+      if (pass) {
+        empty.style.display = 'flex';
       }
-    });
-
-    if (pass) {
-      empty.style.display = 'flex';
     }
   });
 
