@@ -1,6 +1,5 @@
 /* eslint-disable func-names */
 /* eslint-disable no-param-reassign */
-
 (function () {
   /** Make sure to show only the participated events in the schedule * */
   const scheduleItems = document.querySelectorAll('.js-scheduleevent');
