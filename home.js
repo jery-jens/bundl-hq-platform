@@ -12,11 +12,10 @@ const fireworks = new Fireworks(
         max: 0.013,
       },
     },
-    explosion: 10,
     gravity: 0.65,
     opacity: 0.5,
     speed: 2,
-    trace: 5,
+    trace: 3,
   },
 );
 
