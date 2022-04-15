@@ -13,7 +13,6 @@ const fireworks = new Fireworks(
       },
     },
     explosion: 10,
-    particles: 4.85,
     gravity: 0.65,
     opacity: 0.5,
     speed: 2,
