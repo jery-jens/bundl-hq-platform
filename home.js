@@ -1,4 +1,4 @@
-const container = document.querySelector('body');
+const container = document.querySelector('.fireworks');
 const fireworks = new Fireworks(
   container,
   {
@@ -16,6 +16,7 @@ const fireworks = new Fireworks(
     intensity: 4.85,
     gravity: 0.65,
     opacity: 0.5,
+    speed: 10,
   },
 );
 
