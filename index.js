@@ -75,9 +75,13 @@
     });
   };
 
-  toggleLinks.forEach((link) => {
+  toggleLinks.forEach((link, index) => {
     link.addEventListener('click', () => {
       togglePopup(link.children[1].innerHTML);
+
+      if (formIcons[index]) {
+        formIcons[index].style.backgroundColor = '#00BB77';
+      }
     });
   });
 
@@ -95,7 +99,9 @@
 
   closeToggles.forEach((closeToggle) => {
     closeToggle.addEventListener('click', () => {
-      window.location.reload();
+      popups.forEach((popup) => {
+        popup.parentElement.style.display = 'none';
+      });
     });
   });
 
