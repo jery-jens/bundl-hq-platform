@@ -94,19 +94,28 @@
     });
   });
 
-  closeToggles.forEach((closeToggle) => {
+  closeToggles.forEach((closeToggle, index) => {
     closeToggle.addEventListener('click', () => {
-      window.location.reload();
+      popups[index].style.display = 'none';
+
+      if (formStorage.length) {
+        toggleLinks.forEach((link, index) => {
+          if (formStorage.includes(link.children[0].innerHTML)) {
+            // Add green color and full opacity to filled in icon
+            if (formIcons[index]) {
+              formIcons[index].children[0].style.fill = '#00BB77';
+              formIcons[index].children[0].setAttribute('fill-opacity', '1');
+            }
+          }
+        });
+      }
     });
   });
-
-  console.log(scheduleItems, popups)
 
   /** Toggle event popup */
   scheduleItems.forEach((link) => {
     link.addEventListener('click', () => {
       popups.forEach((popup) => {
-        console.log(popup.innerHTML, link.children[0].innerHTML)
         if (popup.innerHTML === link.children[0].innerHTML) {
           const wrapper = popup.parentElement;
           wrapper.style.display = 'flex';
