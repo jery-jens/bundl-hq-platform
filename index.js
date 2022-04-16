@@ -78,7 +78,7 @@
 
   toggleLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      togglePopup(link.children[0].innerHTML);
+      togglePopup(link.children[1].innerHTML);
     });
   });
 
