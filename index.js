@@ -52,7 +52,7 @@
   /** Check if all items are filled in or naah */
   if (formStorage.length) {
     toggleLinks.forEach((link, index) => {
-      if (formStorage.includes(link.children[0].innerHTML)) {
+      if (formStorage.includes(link.children[1].innerHTML)) {
         // Add green color and full opacity to filled in icon
         if (formIcons[index]) {
           formIcons[index].style.backgroundColor = '#00BB77';
