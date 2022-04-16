@@ -3,21 +3,6 @@
 (function () {
   /** Make sure to show only the participated events in the schedule * */
   const scheduleItems = document.querySelectorAll('.js-scheduleevent');
-  const sideItems = document.querySelectorAll('.js-event');
-
-  if (sideItems && scheduleItems) {
-    scheduleItems.forEach((scheduleItem) => {
-      const scheduleTitle = scheduleItem.children[1].innerHTML;
-
-      sideItems.forEach((sideItem) => {
-        const sideTitle = sideItem.innerHTML;
-
-        if (scheduleTitle === sideTitle) {
-          scheduleItem.style.display = 'flex';
-        }
-      });
-    });
-  }
 
   /** Popups */
   const toggleLinks = document.querySelectorAll('.js-togglepopup');
@@ -115,11 +100,14 @@
     });
   });
 
+  console.log(scheduleItems, popups)
+
   /** Toggle event popup */
   scheduleItems.forEach((link) => {
     link.addEventListener('click', () => {
       popups.forEach((popup) => {
-        if (popup.innerHTML === link.children[1].innerHTML) {
+        console.log(popup.innerHTML, link.children[0].innerHTML)
+        if (popup.innerHTML === link.children[0].innerHTML) {
           const wrapper = popup.parentElement;
           wrapper.style.display = 'flex';
         }
